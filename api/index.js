@@ -3,11 +3,45 @@ import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import axios from 'axios';
 
 const prisma = new PrismaClient();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+const FUB_API_KEY = 'fka_0PM6IIPMBTXaoLf9duIP2Oh2FIfBgenckp';
+
+app.post('/api/contacts', async (req, res) => {
+    const { name, email, phone } = req.body;
+
+    try {
+        // Send data to Follow Up Boss
+        const response = await axios.post(
+            'https://api.followupboss.com/v1/people',
+            {
+                firstName: name,
+                emails: [{ value: email }],
+                phones: [{ value: phone }],
+                
+            },
+            {
+                headers: {
+                    'Authorization': `Basic ${Buffer.from(FUB_API_KEY + ':').toString('base64')}`,
+                    'Content-Type': 'application/json',
+                    'X-System': 'TylerFrame',
+                    'X-System-Key': 'a4fa10126ca1a986cd91f074d27f1471',
+                },
+            }
+        );
+
+        // Response to client on successful submission
+        res.status(200).json({ message: 'Contact information sent successfully!', data: response.data });
+    } catch (error) {
+        console.error('Error sending data to Follow Up Boss:', error.response ? error.response.data : error.message);
+        res.status(500).json({ error: 'Failed to send contact information' });
+    }
+});
 
 // Routes to get testimonials
 app.get('/api/testimonials', async (req, res) => {

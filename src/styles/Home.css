@@ -1,0 +1,242 @@
+/* General Styles */
+body {
+  background-color: #131313;
+  color: #FFD700;
+  font-family: Arial, sans-serif;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Ensure the background doesn't overflow */
+}
+
+/* Blurred Background Layer */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/hero.jpeg') no-repeat center center/cover;
+  filter: blur(3px); /* Apply blur to only the background */
+  z-index: 1; /* Make sure this is behind the content */
+  opacity: 0.7; /* Optional: lower opacity to enhance the text visibility */
+}
+
+/* Hero Content (No Blur) */
+.hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFD700;
+  z-index: 2; /* Place the content in front of the blurred background */
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: 4vw;
+  margin: 0;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: 2vw;
+  margin: 1rem 0;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #FFD700;
+  border-color: #FFD700;
+  color: #000000;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+}
+
+.btn-primary:hover {
+  background-color: #FFC700;
+  border-color: #FFC700;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .hero-title {
+      font-size: 6vw;
+  }
+
+  .hero-subtitle {
+      font-size: 3.5vw;
+  }
+
+  .btn-primary {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+      font-size: 8vw;
+  }
+
+  .hero-subtitle {
+      font-size: 4vw;
+  }
+
+  .btn-primary {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+  }
+}
+  
+
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: #FFD700;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.houses-sold {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  background-color: rgba(255, 215, 0, 0.8); /* Gold with opacity */
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.house {
+  margin-bottom: 1rem;
+}
+
+/* Navbar Styles */
+.navbar-logo {
+  height: 40px; /* Adjust the height as needed */
+  margin-right: 10px; /* Space between the logo and brand name */
+}
+
+.custom-navbar {
+  background-color: #000000; /* Slightly different shade of black */
+}
+
+.custom-navbar .navbar-brand, .custom-navbar .nav-link {
+  color: #FFFFFF; /* White text */
+}
+
+.custom-navbar .nav-link.active {
+  background-color: #FFD700; /* Gold for active tab */
+  color: #000000; /* Black text on active tab */
+}
+
+.custom-navbar .nav-link:hover {
+  color: #FFD700; /* Gold text on hover */
+}
+
+/* Bootstrap Overrides */
+.btn-primary {
+  background-color: #FFD700; /* Gold */
+  border-color: #FFD700; /* Gold */
+  color: #000000; /* Black */
+}
+
+.btn-primary:hover {
+  background-color: #FFC700; /* Lighter Gold */
+  border-color: #FFC700; /* Lighter Gold */
+  color: #000000; /* Black */
+}
+
+.modal-content {
+  background-color: #000000; /* Black */
+  color: #FFD700; /* Gold */
+}
+
+.form-control {
+  background-color: #333333; /* Dark Grey */
+  color: #FFD700; /* Gold */
+  border: 1px solid #FFD700; /* Gold */
+}
+
+.form-control::placeholder {
+  color: #FFD700; /* Gold */
+}
+
+.form-label {
+  color: #FFD700; /* Gold */
+}
+
+.modal-header {
+  border-bottom: 1px solid #FFD700; /* Gold */
+}
+
+.modal-footer {
+  border-top: 1px solid #FFD700; /* Gold */
+}
+
+.sub-container {
+  padding: 2rem;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  border-radius: 20px;
+  color: rgba(251, 251, 251, 0.8);
+   /* Gold with opacity */
+}
+
+.sub-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
+
+.card-body {  
+  background-color: #272626;
+   /* Black */
+}
+
+.card-title {
+  color: #FFFFFF;
+}
+
+.card-text {
+  color: #FFFFFF;
+}
+
+.card-container-review {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10rem;
+}
