@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import '../styles/Contact.css';
 import { Form, Button } from 'react-bootstrap';
@@ -19,18 +19,29 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // Send the contact data to your backend
-            const response = await axios.post('/api/contacts', formData);
-            alert('Your message has been sent successfully!');
-            setFormData({ name: '', email: '', phone: '', message: '' });
+            const response = await axios.post('https://api.followupboss.com/v1/people', formData, {
+                headers: {
+                    // eslint-disable-next-line no-undef
+                    'Authorization': `Basic ${process.env.REACT_APP_API_KEY}`,
+                    'Content-Type': 'application/json',
+                },
+            });
+            
+            if (response.status === 200) {
+                alert('Your message has been sent successfully!');
+            } else {
+                alert('Unexpected response. Please try again.');
+            }
         } catch (error) {
             console.error('Error sending message:', error);
             alert('Failed to send your message. Please try again later.');
         }
     };
+    
+            
 
     return (
-        <div className="container contact-form">
+        <div className="container-contact-form">
             <h1 className="form-title">Contact Us</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formName">

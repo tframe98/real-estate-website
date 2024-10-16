@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
 import '../styles/Home.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button, Form } from 'react-bootstrap';
@@ -12,7 +12,7 @@ const Home = () => {
         bathrooms: ''
     });
 
-    const handleShow = () => setShow(true);
+    //const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
     const handleChange = (e) => {

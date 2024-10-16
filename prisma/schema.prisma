@@ -24,9 +24,8 @@ model User {
 
 model Testimonial {
   id        Int      @id @default(autoincrement())
-  name      String
-  content   String
-  createdAt DateTime @default(now())
   userId    Int
-  user      User     @relation(fields: [userId], references: [id])
+  review    String
+  rating    Int
+  createdAt DateTime @default(now())
 }

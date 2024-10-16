@@ -4,11 +4,15 @@ import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
+import bodyParser from 'body-parser';
+import process from 'process';
+import { Buffer } from 'buffer';
 
 const prisma = new PrismaClient();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 const FUB_API_KEY = 'fka_0PM6IIPMBTXaoLf9duIP2Oh2FIfBgenckp';
 
@@ -100,11 +104,7 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-// Protected route example
-app.get('/api/testimonials', async (req, res) => {
-    const testimonials = await prisma.testimonial.findMany();
-    res.json(testimonials);
-});
+
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {

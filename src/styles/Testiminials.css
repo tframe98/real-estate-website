@@ -1,0 +1,47 @@
+/* Container for the testimonials page */
+.testimonials-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f8f9fa; /* Light gray from Bootstrap palette */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling each individual testimonial item */
+  .testimonial-item {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e9ecef; /* Slight border using Bootstrap light colors */
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  
+  .testimonial-item h5 {
+    font-weight: bold;
+    color: #343a40; /* Bootstrap's dark color */
+  }
+  
+  .testimonial-item p {
+    color: #6c757d; /* Bootstrap's secondary text color */
+  }
+  
+  .rating {
+    color: #ffc107; /* Bootstrap's warning color for star ratings */
+  }
+  
+  /* Custom button style for form submission */
+  .custom-submit-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #ffffff;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .custom-submit-button:hover {
+    background-color: #0056b3;
+  }
+  

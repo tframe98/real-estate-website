@@ -1,73 +1,86 @@
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+import './testimonials.css';
+
 
 const Testimonials = () => {
-    const [testimonials, setTestimonials] = useState([]);
-    const [formData, setFormData] = useState({ name: '', content: '' });
+  const [testimonials, setTestimonials] = useState([]);
+  const [review, setReview] = useState('');
+  const [rating, setRating] = useState(0);
 
-    useEffect(() => {
-      axios.get('/api/testimonials')
-          .then(response => {
-              setTestimonials(response.data);
-          })
-          .catch(error => console.error(error));
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await axios.get('/api/testimonials');
+        setTestimonials(response.data);
+      } catch (error) {
+        console.error('Error fetching testimonials', error);
+      }
+    };
+
+    fetchTestimonials();
   }, []);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('/api/testimonials', formData)
-            .then(response => {
-                setTestimonials([...testimonials, response.data]);
-                setFormData({ name: '', content: '' });
-            })
-            .catch(error => console.error(error));
-    };
+    try {
+      const token = localStorage.getItem('token');
+      await axios.post(
+        '/api/testimonials',
+        { review, rating },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-    return (
-        <div className="container">
-            <h1>Testimonials</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label className="form-label">Name</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="form-control"
-                        required
-                    />
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Content</label>
-                    <textarea
-                        name="content"
-                        value={formData.content}
-                        onChange={handleChange}
-                        className="form-control"
-                        required
-                    />
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
-            {testimonials.length > 0 && (
-                <div className="mt-4">
-                    <h2>Submitted Testimonials</h2>
-                    {testimonials.map((testimonial) => (
-                        <div key={testimonial.id}>
-                            <h3>{testimonial.name}</h3>
-                            <p>{testimonial.content}</p>
-                        </div>
-                    ))}
-                </div>
-            )}
-        </div>
-    );
+      // Refresh the testimonials list
+      const updatedTestimonials = await axios.get('/api/testimonials');
+      setTestimonials(updatedTestimonials.data);
+    } catch (error) {
+      console.error('Error submitting testimonial', error);
+    }
+  };
+
+  return (
+    <div>
+      <h2>Testimonials</h2>
+      <ul>
+        {testimonials.map((testimonial) => (
+          <li key={testimonial.id}>
+            {testimonial.review} - Rating: {testimonial.rating}
+          </li>
+        ))}
+      </ul>
+
+      {localStorage.getItem('token') ? (
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Review:</label>
+            <textarea
+              value={review}
+              onChange={(e) => setReview(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Rating:</label>
+            <input
+              type="number"
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+              min="1"
+              max="5"
+            />
+          </div>
+          <button type="submit">Submit Testimonial</button>
+        </form>
+      ) : (
+        <p>Please log in to leave a testimonial.</p>
+      )}
+    </div>
+  );
 };
 
 export default Testimonials;

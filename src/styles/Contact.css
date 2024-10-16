@@ -1,10 +1,13 @@
-.container {
+.container-contact-form {
   max-width: 600px;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 10rem;
   padding: 2rem;
-  background-color: #000000; /* Background black */
-  color: #FFD700; /* Gold text */
+  background-color: #000000; 
+  color: #FFD700; 
   border-radius: 10px;
+  justify-content: column;
+  
 }
 
 .form-title {
@@ -13,28 +16,33 @@
   margin-bottom: 2rem;
 }
 
+#formName, #formEmail, #formPhone {
+  margin-top:.25rem;
+  margin-bottom:.75rem;
+}
+
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .form-control {
-  background-color: #333333; /* Dark Grey input fields */
-  color: #FFD700; /* Gold text */
-  border: 1px solid #FFD700; /* Gold border */
+  background-color: #333333; 
+  color: #FFD700; 
+  border: 1px solid #FFD700; 
 }
 
 .form-control::placeholder {
-  color: #FFD700; /* Gold placeholder text */
+  color: #FFD700; 
 }
 
 .form-label {
-  color: #FFD700; /* Gold labels */
+  color: #FFD700; 
 }
 
 .submit-button {
   background-color: #FFD700;
   border-color: #FFD700;
-  color: #000000; /* Black text */
+  color: #000000; 
   width: 100%;
   padding: 0.75rem;
   font-size: 1.2rem;
