@@ -14,7 +14,7 @@ body {
   align-items: center;
   text-align: center;
   color: white;
-  overflow: hidden; /* Ensure the background doesn't overflow */
+  overflow: hidden; 
 }
 
 /* Blurred Background Layer */
@@ -84,6 +84,10 @@ body {
       font-size: 1rem;
       padding: 0.5rem 1rem;
   }
+
+  .card-text-review {
+    font-size: 1.2rem; /* Adjust as needed for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
@@ -98,6 +102,10 @@ body {
   .btn-primary {
       font-size: 0.9rem;
       padding: 0.4rem 0.8rem;
+  }
+
+  .card-text-review {
+    font-size: 1rem; /* Further adjustment for very small screens */
   }
 }
   
@@ -238,5 +246,15 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 10rem;
+  margin: 10rem;  
+}
+
+.card-text-review {
+  font-size: 0.9rem;
+  color: #FFFFFF;
+}
+
+.card-review {
+  background-color: #FFD700;
+  height: 25rem;
 }
