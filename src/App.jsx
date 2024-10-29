@@ -7,6 +7,8 @@ import About from './pages/About';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import express from 'express';
+import authRoutes from './routes/authRoutes.js';
 
 const App = () => {
     return (
@@ -23,5 +25,18 @@ const App = () => {
         </Router>
     );
 };
+
+
+
+const app = express();
+app.use(express.json()); // Middleware to parse JSON requests
+
+// Attach auth routes to /api
+app.use('/api', authRoutes);
+
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
 
 export default App;

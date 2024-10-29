@@ -1,21 +1,24 @@
-// middleware/auth.js
-import { verify } from 'jsonwebtoken';
-import process from 'process';
+// authRoutes.js
+import express from 'express';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
-const requireAuth = (req, res, next) => {
-  const token = req.headers.authorization?.split(' ')[1];
+const router = express.Router();
 
-  if (!token) {
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
+// Register route
+router.post('/register', async (req, res) => {
+  const { username, email, password } = req.body;
+  
+  // Registration logic (e.g., hashing password, saving user)
+  // Respond with success or error
+});
 
-  try {
-    const decoded = verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    return res.status(401).json({ message: 'Invalid token' });
-  }
-};
+// Login route
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
 
-export default { requireAuth };
+  // Login logic (e.g., verifying password, generating token)
+  // Respond with success or error
+});
+
+export default router;
