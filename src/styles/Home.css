@@ -246,20 +246,6 @@ p {
 .card-review {
   display: flex;
   flex-wrap: wrap;
-<<<<<<< HEAD
-  justify-content: space-around;
-  margin: 10rem;  
-}
-
-.card-text-review {
-  font-size: 0.9rem;
-  color: #FFFFFF;
-}
-
-.card-review {
-  background-color: #FFD700;
-  height: 25rem;
-=======
   justify-content: space-around; /* Spreads items across each row */
   row-gap: 1rem; /* Adds space between rows */
   column-gap: 1rem;
@@ -275,6 +261,5 @@ p {
   padding: 1rem; 
   border-radius: 1rem;
   margin-bottom: 2rem;/* Adds space between items in each row */
->>>>>>> e5ab5f4 (css)
 }
 

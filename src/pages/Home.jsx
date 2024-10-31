@@ -144,14 +144,6 @@ turn away.</p>
 <div className="card-review" >
   
   <div className="card-body-review">
-<<<<<<< HEAD
-    <h5 className="card-title-review">John Doe</h5>
-    <p className="card-text-review">Sam has now represented my on three deals in the Reno area as well as assisted me in finding an agent via his referral network for an
-       out-of-state deal. He has a can-do attitude and is extremely detail oriented when executing complex transactions. This was critical in keeping closings to the 
-       anticipated timelines and resolving issues as they arose. Aside from his real estate knowledge, Sam was able to assist with a great network of movers, contractors, 
-       painters which supported pre-closing repairs and owner improvements after the sale. I give Sam my highest recommendation as my go-to person to represent me in the future. 
-       He will be a great partner to anyone he works with.</p>
-=======
     
     <p className="card-text-review">Sam was an amazing help when our family was searching 
     for a home in the Reno area. We worked with Sam for almost a year until we found the 
@@ -164,7 +156,6 @@ turn away.</p>
     but Sam had a professional contact for everything we needed. Sam is very friendly, honest and 
     professional and I will highly recommend him to my friends 
     and family when looking for a home in the Reno area. Thank you Sam!! You're the best!!</p>
->>>>>>> e5ab5f4 (css)
    
   </div>
 </div>
@@ -172,15 +163,6 @@ turn away.</p>
 <div className="card-review">
   
   <div className="card-body-review">
-<<<<<<< HEAD
-    <h5 className="card-title-review">John Doe</h5>
-    <p className="card-text-review">Sam was an amazing help when our family was searching for a home in the Reno area. We worked with Sam for almost a year until we found the 
-      perfect house in our price range. We are not from the Reno area so Sam took a lot of time to make sure the house was in a great location, close to stores, easy to get to 
-      and from downtown and most importantly being a safe and clean location. Sam spent countless hours, including his own personal time, meeting with us at multiple houses and 
-      never let us down and he never gave up on us or our search. With us not being from the area, we are not familiar many people or companies we can trust to do needed work 
-      and repairs, but Sam had a professional contact for everything we needed. Sam is very friendly, honest and professional and I will highly recommend him to my friends and 
-      family when looking for a home in the Reno area. Thank you Sam!! You're the best!!</p>
-=======
     
     <p className="card-text-review">Sam has now represented my on three deals in the
      Reno area as well as assisted me in finding an agent via his referral network for 
@@ -191,7 +173,6 @@ turn away.</p>
        painters which supported pre-closing repairs and owner improvements after the sale. 
        I give Sam my highest recommendation as my go-to person to represent me in the future. 
        He will be a great partner to anyone he works with.</p>
->>>>>>> e5ab5f4 (css)
     
   </div>
 </div>
@@ -199,19 +180,12 @@ turn away.</p>
 <div className="card-review">
   
   <div className="card-body-review">
-<<<<<<< HEAD
-    <h5 className="card-title-review">John Doe</h5>
-    <p className="card-text-review">Sam was amazing. He really took the time to help my wife and me sell our house. He is knowledgeable, friendly, and really dedicated
-       to getting a deal done. In our case, I can confidently say he went above and beyond for us. I wish I could rate him higher. This was the second deal we had with 
-       Sam Dykstra. He helped my sister get a condo. He has been nothing but great. </p>
-=======
     
     <p className="card-text-review">Sam was amazing. He really took the time to help my wife and 
     me sell our house. He is knowledgeable, friendly, and really dedicated to getting a deal done. In 
     our case, I can confidently say he went above and beyond for us. I wish I could rate him higher. 
     This was the second deal we had with Sam Dykstra. He helped my sister get a condo. He has been
      nothing but great. </p>
->>>>>>> e5ab5f4 (css)
     
   </div>
 </div>
@@ -219,17 +193,11 @@ turn away.</p>
 <div className="card-review" >
   
   <div className="card-body-review">
-<<<<<<< HEAD
-    <h5 className="card-title-review">John Doe</h5>
-    <p className="card-text-review">Sam was great! Very understanding that we initially weren't sure if we wanted to move to the area, provided advice as our interests
-       changed, helping us find just the right home, and offering to represent us every step of the way. Highly recommended!</p>
-=======
     
     <p className="card-text-review">Sam was great! Very understanding that we initially 
     weren't sure if we wanted to move to the area, provided advice as our interests changed, 
     helping us find just the right home, and offering to represent us every step of the way. 
     Highly recommended! </p>
->>>>>>> e5ab5f4 (css)
     
   </div>
 </div>
